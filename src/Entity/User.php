@@ -66,7 +66,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $dateInscription;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, columnDefinition="ENUM('acheteur', 'vendeur')")
      */
     private $type;
 
