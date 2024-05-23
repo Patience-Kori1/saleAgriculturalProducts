@@ -22,7 +22,7 @@ class Categorie
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nom;
+    private $nomCategorie;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -49,14 +49,14 @@ class Categorie
         return $this->id;
     }
 
-    public function getNom(): ?string
+    public function getNomCategorie(): ?string
     {
-        return $this->nom;
+        return $this->nomCategorie;
     }
 
-    public function setNom(string $nom): self
+    public function setNomCategorie(string $nomCategorie): self
     {
-        $this->nom = $nom;
+        $this->nomCategorie = $nomCategorie;
 
         return $this;
     }

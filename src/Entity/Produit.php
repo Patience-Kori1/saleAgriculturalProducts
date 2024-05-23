@@ -20,7 +20,7 @@ class Produit
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nom;
+    private $nomProduit;
 
     /**
      * @ORM\Column(type="text")
@@ -38,16 +38,6 @@ class Produit
     private $quantiteStock;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $image;
-
-    /**
-     * @ORM\Column(type="date")
-     */
-    private $dateCreation;
-
-    /**
      * @ORM\ManyToOne(targetEntity=Categorie::class, inversedBy="produits")
      */
     private $categorie;
@@ -57,14 +47,14 @@ class Produit
         return $this->id;
     }
 
-    public function getNom(): ?string
+    public function getNomProduit(): ?string
     {
-        return $this->nom;
+        return $this->nomProduit;
     }
 
-    public function setNom(string $nom): self
+    public function setNomProduit(string $nomProduit): self
     {
-        $this->nom = $nom;
+        $this->nomProduit = $nomProduit;
 
         return $this;
     }
@@ -101,30 +91,6 @@ class Produit
     public function setQuantiteStock(int $quantiteStock): self
     {
         $this->quantiteStock = $quantiteStock;
-
-        return $this;
-    }
-
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(string $image): self
-    {
-        $this->image = $image;
-
-        return $this;
-    }
-
-    public function getDateCreation(): ?\DateTimeInterface
-    {
-        return $this->dateCreation;
-    }
-
-    public function setDateCreation(\DateTimeInterface $dateCreation): self
-    {
-        $this->dateCreation = $dateCreation;
 
         return $this;
     }
